@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="javaee1_day21_crm"
+  id="myeclipse.1481522462202"
+  context-root="/javaee1_day21_crm"
+  j2ee-spec="6.0"
+  archive="javaee1_day21_crm.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 写公共的配置 -->
+    <constant name="struts.devMode" value="true"></constant>
+    
+    <constant name="struts.ui.theme" value="simple"></constant>
+    
+    <package name="common" extends="struts-default" namespace="/">
+        <!-- 注册登陆拦截器 -->
+        <interceptors>
+           <interceptor name="loginIntercepter" class="com.qianfeng.web.intercepter.LoginIntercepter"></interceptor>
+           <interceptor-stack name="myStack">
+           		<interceptor-ref name="defaultStack"></interceptor-ref>
+           		<interceptor-ref name="loginIntercepter"></interceptor-ref>
+           </interceptor-stack>
+        </interceptors>
+        
+        <default-interceptor-ref name="myStack"></default-interceptor-ref>
+        
+        <global-results>
+            <result name="login">/WEB-INF/pages/login.jsp</result>
+        </global-results>
+        
+        <!-- 访问jsp页面的通用的action -->
+        <action name="accessJspAction_*_*">
+            <result>/WEB-INF/pages/{1}/{2}.jsp</result> 
+        </action>
+    </package>
+    
+    <include file="struts/struts-staff.xml"></include>
+    <include file="struts/struts-post.xml"></include>
+</struts>
+
+

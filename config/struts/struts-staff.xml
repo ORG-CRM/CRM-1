@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!--员工的action配置 -->
+    <package name="staff" extends="common" namespace="/">
+    	<action name="staffAction_*"  class="com.qianfeng.crm.staff.web.action.StaffAction" method="{1}">
+    	     <!-- 指定login不被拦截 -->
+    	     <interceptor-ref name="myStack">
+    	          <param name="loginIntercepter.excludeMethods">login</param>
+    	     </interceptor-ref>
+    	     <result type="redirectAction">staffAction_home</result> <!-- 重定向 -->
+    	     <result name="login">/WEB-INF/pages/login.jsp</result><!--转发 -->
+    	     
+    	     <result name="home">/WEB-INF/pages/frame.jsp</result>
+    	     
+    	     <result name="findAll">/WEB-INF/pages/staff/listStaff.jsp</result>
+    	     
+    	     <result name="findStaffById">/WEB-INF/pages/staff/editStaff.jsp</result>
+    	</action>
+    </package>
+
+</struts>  
+
+
+

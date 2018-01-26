@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.qianfeng.crm.staff.domain.CrmStaff" table="crm_staff">
+			<id name="staffId">
+				<generator class="uuid"></generator>
+			</id>
+	        <property name="loginName" type="string"></property>
+	        <property name="loginPwd" type="string"></property>
+	        <property name="staffName" type="string"></property>
+	        <property name="gender" type="string"></property>
+	        <property name="onDutyDate" type="date"></property>	 
+	        
+	        <!-- 多对一的关系，属于一个职务 -->
+	        <many-to-one name="post" class="com.qianfeng.crm.post.domain.CrmPost" column="postId"></many-to-one>   
+    </class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
