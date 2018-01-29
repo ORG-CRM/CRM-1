@@ -6,7 +6,7 @@ public class AccessJspAction extends ActionSupport{
 	
 	@Override
 	public String execute() throws Exception {
-		System.out.println("hehe22");
+		System.out.println("hehe22");//lidan 
 		return "success";
 	}
 
